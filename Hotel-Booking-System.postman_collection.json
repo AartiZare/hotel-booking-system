@@ -1,0 +1,738 @@
+{
+	"info": {
+		"_postman_id": "32a103e4-d9df-4036-aaa3-18a106e7a7a0",
+		"name": "Hotel booking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22858946"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstName\": \"Aarti\",\r\n  \"lastName\": \"Zare\",\r\n  \"email\": \"zareaarti5+1@gmail.com\",\r\n  \"phoneNumber\": \"9876543200\",\r\n  \"password\": \"Test@123\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/user/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verify-otp",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"zareaarti5+1@gmail.com\",\r\n    \"otp\": \"767472\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/user/verify-otp",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"verify-otp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profile details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTU2MWMyYmZlNjJiZjdlNjRjMzE1N2MiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3Njc0MjUwMTQsImV4cCI6MTc2ODAyOTgxNH0.TI3iSNwzoOd1zoOCh1tTmL4O-Qvajcf99kxIe1lcHPY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer YOUR_JWT_TOKEN"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/user/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "resend-otp",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"zareaarti5@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/user/resend-otp",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"resend-otp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"zareaarti5+1@gmail.com\",\r\n    \"password\": \"Pass@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forgot-password",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"zareaarti5+1@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/user/forgot-password",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset-password",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"zareaarti5+1@gmail.com\",\r\n    \"newPassword\": \"Pass@123\",\r\n    \"otp\": \"658022\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/user/reset-password",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTU2MWMyYmZlNjJiZjdlNjRjMzE1N2MiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3Njc0MjUwMTQsImV4cCI6MTc2ODAyOTgxNH0.TI3iSNwzoOd1zoOCh1tTmL4O-Qvajcf99kxIe1lcHPY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer YOUR_JWT_TOKEN"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"firstName\": \"Aarti\",\n  \"lastName\": \"Zare Updated\",\n  \"phoneNumber\": \"9123456789\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTU2MWMyYmZlNjJiZjdlNjRjMzE1N2MiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3Njc0MjUwMTQsImV4cCI6MTc2ODAyOTgxNH0.TI3iSNwzoOd1zoOCh1tTmL4O-Qvajcf99kxIe1lcHPY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deactivate user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTU2MWMyYmZlNjJiZjdlNjRjMzE1N2MiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3Njc0MjUwMTQsImV4cCI6MTc2ODAyOTgxNH0.TI3iSNwzoOd1zoOCh1tTmL4O-Qvajcf99kxIe1lcHPY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/:id/status",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								":id",
+								"status"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "695904135d577f9b34fd81ff"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTU2MWMyYmZlNjJiZjdlNjRjMzE1N2MiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3Njc0MjUwMTQsImV4cCI6MTc2ODAyOTgxNH0.TI3iSNwzoOd1zoOCh1tTmL4O-Qvajcf99kxIe1lcHPY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/user/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "695904135d577f9b34fd81ff"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "hotels",
+			"item": [
+				{
+					"name": "create hotels",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTU2MWMyYmZlNjJiZjdlNjRjMzE1N2MiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3Njc0MjUwMTQsImV4cCI6MTc2ODAyOTgxNH0.TI3iSNwzoOd1zoOCh1tTmL4O-Qvajcf99kxIe1lcHPY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer ADMIN_TOKEN"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Sea Breeze Hotel",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "Goa",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Calangute Beach Road",
+									"type": "text"
+								},
+								{
+									"key": "defaultPrice",
+									"value": "4000",
+									"type": "text"
+								},
+								{
+									"key": "latitude",
+									"value": "15.5440",
+									"type": "text"
+								},
+								{
+									"key": "longitude",
+									"value": "73.7553",
+									"type": "text"
+								},
+								{
+									"key": "photos",
+									"type": "file",
+									"src": "/C:/Users/sanke/Downloads/dummy_6.jpg8ed0eb08-e208-48e0-a1ae-9dc0805bcc6cZoom.jpg"
+								},
+								{
+									"key": "photos",
+									"type": "file",
+									"src": "/C:/Users/sanke/Downloads/small-white-figurine-standing-on-a-plain-surface-cut-out-stock-png.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/hotel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"hotel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All hotels",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTU2MWMyYmZlNjJiZjdlNjRjMzE1N2MiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3Njc0MjUwMTQsImV4cCI6MTc2ODAyOTgxNH0.TI3iSNwzoOd1zoOCh1tTmL4O-Qvajcf99kxIe1lcHPY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/hotel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"hotel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Hotel Details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTU2MWMyYmZlNjJiZjdlNjRjMzE1N2MiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3Njc0MjUwMTQsImV4cCI6MTc2ODAyOTgxNH0.TI3iSNwzoOd1zoOCh1tTmL4O-Qvajcf99kxIe1lcHPY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/hotel/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"hotel",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6958c70ca06199ac54b2519c"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update hotel details and pricing",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTU2MWMyYmZlNjJiZjdlNjRjMzE1N2MiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3Njc0MjUwMTQsImV4cCI6MTc2ODAyOTgxNH0.TI3iSNwzoOd1zoOCh1tTmL4O-Qvajcf99kxIe1lcHPY"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Sea Breeze Hotel Updated",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Updated description",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "Goa",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Calangute Beach Road Updated",
+									"type": "text"
+								},
+								{
+									"key": "defaultPrice",
+									"value": "5000",
+									"type": "text"
+								},
+								{
+									"key": "latitude",
+									"value": "15.544",
+									"type": "text"
+								},
+								{
+									"key": "longitude",
+									"value": "73.7553",
+									"type": "text"
+								},
+								{
+									"key": "specialPricesToAdd[0][startDate]",
+									"value": "2026-12-24",
+									"type": "text"
+								},
+								{
+									"key": "specialPricesToAdd[0][endDate]",
+									"value": "2026-12-31",
+									"type": "text"
+								},
+								{
+									"key": "specialPricesToAdd[0][price]",
+									"value": "7000",
+									"type": "text"
+								},
+								{
+									"key": "specialPricesToAdd[1][startDate]",
+									"value": "2026-11-01",
+									"type": "text"
+								},
+								{
+									"key": "specialPricesToAdd[1][endDate]",
+									"value": "2026-11-05",
+									"type": "text"
+								},
+								{
+									"key": "specialPricesToAdd[1][price]",
+									"value": "6000",
+									"type": "text"
+								},
+								{
+									"key": "specialPricesToRemove[0]",
+									"value": "6959098ff0b9c4d89db4a2d5",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/hotel/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"hotel",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6958c70ca06199ac54b2519c"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search hotels",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTU2MWMyYmZlNjJiZjdlNjRjMzE1N2MiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3Njc0MjUwMTQsImV4cCI6MTc2ODAyOTgxNH0.TI3iSNwzoOd1zoOCh1tTmL4O-Qvajcf99kxIe1lcHPY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/hotel/search?latitude=15.544&longitude=73.7553&startDate=2026-12-24&endDate=2026-12-26&page=1&limit=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"hotel",
+								"search"
+							],
+							"query": [
+								{
+									"key": "latitude",
+									"value": "15.544"
+								},
+								{
+									"key": "longitude",
+									"value": "73.7553"
+								},
+								{
+									"key": "startDate",
+									"value": "2026-12-24"
+								},
+								{
+									"key": "endDate",
+									"value": "2026-12-26"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete hotel",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTU2MWMyYmZlNjJiZjdlNjRjMzE1N2MiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3Njc0MjUwMTQsImV4cCI6MTc2ODAyOTgxNH0.TI3iSNwzoOd1zoOCh1tTmL4O-Qvajcf99kxIe1lcHPY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer YOUR_ADMIN_JWT_TOKEN"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/hotel/6958dcf55c9898edb3221346",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"hotel",
+								"6958dcf55c9898edb3221346"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
